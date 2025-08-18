@@ -1,0 +1,80 @@
+!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>"Geo-Art Categolyze” – 0001-0250.mp4</title>
+  <style>
+    :root { color-scheme: light dark; }
+    body { margin: 0; min-height: 100vh; display: grid; place-items: center; font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; padding: 24px; }
+    .wrap { width: 100%; max-width: 900px; }
+    h1 { font-size: 1.25rem; margin: 0 0 12px; }
+    video { width: 100%; height: auto; border-radius: 12px; outline: none; }
+    .bar { margin-top: 10px; display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+    button, select, label { font: inherit; }
+    button, select { padding: 6px 10px; border-radius: 8px; border: 1px solid #9993; background: transparent; cursor: pointer; }
+    small { opacity: .75; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>Geo-Art</h1>
+    <!-- Place 0001-0250.mp4 in the same folder as this HTML, or change the src below -->
+    <video id="player" controls preload="metadata" playsinline>
+      <source src="0001-0250.mp4" type="video/mp4">
+      Your browser does not support MP4 video.
+    </video>
+
+    <div class="bar">
+      <label>Speed
+        <select id="speed">
+          <option>0.5</option>
+          <option selected>1</option>
+          <option>1.25</option>
+          <option>1.5</option>
+          <option>2</option>
+        </select>
+      </label>
+      <button id="pick">Open local file…</button>
+      <small>_ This is the first stage of my project, a page showing a map of California <code>autoplay muted</code> to the &lt;video&gt; tag.</small>
+    </div>
+  </div>
+
+  <script>
+    const player = document.getElementById('player');
+    document.getElementById('speed').addEventListener('change', (e) => {
+      player.playbackRate = Number(e.target.value);
+    });
+
+    document.getElementById('pick').addEventListener('click', async () => {
+      try {
+        // Modern file picker (works in most browsers). Fallback provided below.
+        if ('showOpenFilePicker' in window) {
+          const [handle] = await window.showOpenFilePicker({
+            types: [{ description: 'Video', accept: { 'video/*': ['.mp4', '.mov', '.webm', '.m4v'] } }]
+          });
+          const file = await handle.getFile();
+          const url = URL.createObjectURL(file);
+          player.src = url;
+          player.play();
+        } else {
+          // Fallback: create a hidden input
+          const input = document.createElement('input');
+          input.type = 'file';
+          input.accept = 'video/*';
+          input.onchange = () => {
+            const file = input.files[0];
+            if (!file) return;
+            const url = URL.createObjectURL(file);
+            player.src = url;
+            player.play();
+          };
+          input.click();
+        }
+      } catch (e) {
+        console.warn(e);
+      }
+    });
+  </script>
+</body>
+</html>
