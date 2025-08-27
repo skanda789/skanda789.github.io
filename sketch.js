@@ -23,7 +23,7 @@ function initSystem() {
   particles.length = 0;
 
   const area = width * height;
-  const baseCount = constrain(floor(area / 14000), 200, 1200);
+  const baseCount = constrain(floor(area / 1400), 20, 120);
   const extra = width > 1400 ? 200 : 0;
   const count = baseCount + extra;
 
