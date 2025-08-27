@@ -6,14 +6,22 @@
   <title>Seiya Kanda — Autobiography</title>
   <link rel="stylesheet" href="style.css" />
   <meta name="description" content="Seiya Kanda — filmmaker & philosophy student blending documentary, critical theory, and creative tech." />
+
+  <style>
+    
+    #myCanvas {
+      position: fixed; inset: 0; z-index: 0;
+      pointer-events: none;
+      display: block;
+    }
+    
+    .wrap { position: relative; z-index: 1; }
+  </style>
 </head>
 <body>
- 
 
-  <!-- Background Canvas -->
   <canvas id="myCanvas"></canvas>
 
-  <!-- Main Content -->
   <div class="wrap">
     <header>
       <img src="seiyawithhat.JPG" alt="Portrait of Seiya Kanda looking toward the horizon" />
@@ -26,28 +34,26 @@
     <main>
       <h2>Autobiography</h2>
       <p>I am a filmmaker focused on how media shapes knowledge, ethics, and perceptions of place. My work reflects the philosophy inherent in the people, history, and nature rooted in a land.</p>
-      <p>Others are mirrors reflecting ourselves. If you feel aversion toward others or subjects, they may reflect the aspects of yourself you dislike most. </p>
-      <p>Le vent se lève, il faut tenter de vivre.
-- Paul Valéry</p>
+      <p>Others are mirrors reflecting ourselves. If you feel aversion toward others or subjects, they may reflect the aspects of yourself you dislike most.</p>
+      <p>Le vent se lève, il faut tenter de vivre. — Paul Valéry</p>
 
       <h2>Projects</h2>
       <div class="projects">
-        <a href="index2.html">Media Portfolio</a>
+        
+        <a href="/index2.html">Media Portfolio</a>
       </div>
 
       <h2></h2>
       <div id="sketch-holder" style="margin:16px 0; border:1px solid #2b3156; border-radius:12px; overflow:hidden;"></div>
 
       <h2>Contact</h2>
-      <p><strong>Email:</strong> <a href="mailto:your-email@example.com">seicha122501@gmail.com</a><br />
-         <strong>GitHub:</strong> <a href="https://github.com/skanda789" target="_blank" rel="noopener">github.com/skanda789 </a></p>
-         <skanda789></skanda789></a></p>
+      <p><strong>Email:</strong> <a href="mailto:seicha122501@gmail.com">seicha122501@gmail.com</a><br />
+         <strong>GitHub:</strong> <a href="https://github.com/skanda789" target="_blank" rel="noopener">github.com/skanda789</a></p>
     </main>
 
     <footer>© <span id="y"></span> Seiya Kanda · Built with HTML/CSS on GitHub Pages</footer>
   </div>
 
-  <!-- Scripts -->
   <script>document.getElementById('y').textContent=new Date().getFullYear();</script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.11.8/p5.min.js"></script>
   <script src="sketch.js"></script>
