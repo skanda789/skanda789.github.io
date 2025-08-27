@@ -6,6 +6,9 @@ let zOff = 0;
 let fieldScale;        
 let bgColor = '#0b1020'; 
 
+const MAX_W = 640;   
+const ASPECT = 16 / 9;
+
 function setup() {
   createCanvas(windowWidth, windowHeight);
   colorMode(HSB, 360, 100, 100, 100);
@@ -23,7 +26,7 @@ function initSystem() {
   particles.length = 0;
 
   const area = width * height;
-  const baseCount = constrain(floor(area / 1400), 20, 120);
+  const baseCount = constrain(floor(area / 14000), 200, 1200);
   const extra = width > 1400 ? 200 : 0;
   const count = baseCount + extra;
 
