@@ -1,74 +1,57 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width,initial-scale=1"/>
-  <title>Seiya Kanda — Portfolio</title>
-
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@30;50;70&display=swap" rel="stylesheet">
-
-  <!-- CSS: first global, then page-specific -->
-  <link rel="stylesheet" href="../style.css">
-  <link rel="stylesheet" href="./style.css">
-  <meta name="description" content="Selected works in film, philosophy, and interactive media by Seiya Kanda.">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Seiya Kanda — Autobiography</title>
+  <link rel="stylesheet" href="style.css" />
+  <meta name="description" content="Seiya Kanda — filmmaker & philosophy student blending documentary, critical theory, and creative tech." />
 </head>
 <body>
-  <header class="top">
-    <a class="brand" href="../">← Home</a>
-    <h1>Portfolio</h1>
-  </header>
+ 
 
-  <main class="grid">
-    <article class="card">
-      <img src="seals_still.jpg" alt="Harbor seals on the California coast">
-      <div class="body">
-        <h2>Seals are resting in the beach</h2>
-        <p>Santa Barbara harbor</p>
-        <p class="links"></p>
+  <!-- Background Canvas -->
+  <canvas id="myCanvas"></canvas>
+
+  <!-- Main Content -->
+  <div class="wrap">
+    <header>
+      <img src="seiyawithhat.JPG" alt="Portrait of Seiya Kanda looking toward the horizon" />
+      <div>
+        <h1>Seiya Kanda</h1>
+        <div class="subtitle">Filming living Philosophy in our world</div>
       </div>
-    </article>
+    </header>
 
-    <article class="card">
-      <img src="beach_still.jpg" alt="Sunset over the ocean with waves gently reaching the sandy shore">
-      <div class="body">
-        <h2>Sunset</h2>
-        <p>Sunset moment in Santa Barbara harbor</p>
-        <p class="links"></p>
-     </div>
-    </article>
+    <main>
+      <h2>Autobiography</h2>
+      <p>I am a filmmaker focused on how media shapes knowledge, ethics, and perceptions of place. My work reflects the philosophy inherent in the people, history, and nature rooted in a land.</p>
+      <p>Others are mirrors reflecting ourselves. If you feel aversion toward others or subjects, they may reflect the aspects of yourself you dislike most. </p>
+      <p>Le vent se lève, il faut tenter de vivre.
+- Paul Valéry</p>
 
-    <article class="card">
-      <img src="landscape_still.jpg" alt="Landscape photograph while rocket is launching">
-      <div class="body">
-        <h2>Rocket launch in the night</h2>
-        <p>Rocket launch in the night from the uphill in Goleta</p>
-        <p class="links"></p>
+      <h2>Projects</h2>
+      <div class="projects">
+        <a href="portofolio/index.html">Media Portfolio</a>
       </div>
-    </article>
 
-    <article class="card">
-      <img src="rocket_still.jpg" alt="Rocket launching in the night">
-      <div class="body">
-        <h2>Rocket launch from Vandenberg</h2>
-        <p>Rocket launch in the night from Vandenberg Air Force Base</p>
-        <p class="links"></p>
-      </div>
-    </article>
+      <h2></h2>
+      <div id="sketch-holder" style="margin:16px 0; border:1px solid #2b3156; border-radius:12px; overflow:hidden;"></div>
 
-    <article class="card">
-      <img src="rocket_still2.jpg" alt="Sky">
-      <div class="body">
-        <h2>Sky after a rocket launched</h2>
-        <p>Another frame from the same launch</p>
-        <p class="links"></p>
-      </div>
-    </article>
-  </main>
+      <h2>Contact</h2>
+      <p><strong>Email:</strong> <a href="mailto:your-email@example.com">seicha122501@gmail.com</a><br />
+         <strong>GitHub:</strong> <a href="https://github.com/skanda789" target="_blank" rel="noopener">github.com/skanda789 </a></p>
+         <skanda789></skanda789></a></p>
+    </main>
 
-  <footer class="foot">© <span id="year"></span> Seiya Kanda</footer>
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+    <footer>© <span id="y"></span> Seiya Kanda · Built with HTML/CSS on GitHub Pages</footer>
+  </div>
+
+  <!-- Scripts -->
+  <script>document.getElementById('y').textContent=new Date().getFullYear();</script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.11.8/p5.min.js"></script>
+  <script src="sketch.js"></script>
+  <script src="canvas.js"></script>
+  <script src="intro.js"></script>
 </body>
 </html>
