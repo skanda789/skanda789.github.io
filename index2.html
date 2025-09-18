@@ -14,6 +14,12 @@
   <link rel="stylesheet" href="../style2.css">
   <link rel="stylesheet" href="./style2.css">
   <meta name="description" content="Selected works in film, philosophy, and interactive media by Seiya Kanda.">
+
+  <!-- Minimal override to center titles inside cards -->
+  <style>
+    .card .body { text-align: center; }
+    .card .body h2 { margin: 0.4rem 0 0.2rem; line-height: 1.2; }
+  </style>
 </head>
 <body>
   <header class="top">
@@ -66,9 +72,28 @@
         <p class="links"></p>
       </div>
     </article>
+
+    <!-- New: YouTube link card with thumbnail named "doc2" -->
+    <article class="card">
+      <a class="video-link"
+         href="https://www.youtube.com/watch?v=CN55np9D_9c"
+         target="_blank" rel="noopener"
+         aria-label="Open YouTube video">
+        <!-- Use your local thumbnail file named doc2.jpg (or .png) -->
+        <img src="doc2.jpg" alt="YouTube thumbnail for the new video">
+      </a>
+      <div class="body">
+        <h2>The bees & the birds</h2>
+        <p>A documentary of wildlives in UCSB green house. Click this thumbnail.</p>
+        <p class="links">
+          <a href="https://www.youtube.com/watch?v=CN55np9D_9c" target="_blank" rel="noopener">Open video ↗</a>
+        </p>
+      </div>
+    </article>
   </main>
 
   <footer class="foot">© <span id="year"></span> Seiya Kanda</footer>
   <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>
+
